@@ -1,4 +1,5 @@
 class AuthenticationController < ApplicationController
+  skip_before_action :verify_authenticity_token, :only => [:login]
   skip_before_action :authenticate_request
 
   # POST /auth/login

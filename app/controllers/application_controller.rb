@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_request
+    p("This is the debug message")
+
     header = request.headers['Authentication']
     header = header.split(' ').last if header
     decoded = jwt_decode(header)
